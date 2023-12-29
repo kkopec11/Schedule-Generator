@@ -24,6 +24,8 @@ const CalendarGrid = () => {
         hideFooter
         showCellVerticalBorder
         showColumnVerticalBorder
+        disableColumnFilter
+        disableColumnMenu
       />
     </Box>
   );
