@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { columns } from "./components/columns";
 import { useGenerateDataRows } from "../../providers/DataContext";
 
@@ -20,6 +20,7 @@ const CalendarGrid = () => {
       <DataGrid
         rows={rows}
         columns={columns}
+        slots={{ toolbar: GridToolbar }}
         disableRowSelectionOnClick
         hideFooter
         showCellVerticalBorder
