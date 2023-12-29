@@ -2,9 +2,11 @@ import React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import { columns } from "./components/columns";
-import { rows } from "./components/rows";
+import { useGenerateDataRows } from "../../providers/DataContext";
 
 const CalendarGrid = () => {
+  const { rows } = useGenerateDataRows();
+
   return (
     <Box
       sx={{
