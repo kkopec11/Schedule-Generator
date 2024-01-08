@@ -8,7 +8,7 @@ interface DataProviderProps {
 export const DataContext = React.createContext<any>(undefined);
 
 export const DataProvider = (props: DataProviderProps) => {
-  const [rows, setRows] = useState<any>(workerData);
+  const [rows, setRows] = useState<any>([]);
 
   return (
     <DataContext.Provider value={{ rows, setRows }}>
