@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
-import { useGenerateDataRows } from "../../providers/DataContext";
+import FormDialog from "../Dialog/FormDialog";
 
 const AddNewWorkerButton = () => {
-  const { rows, setRows } = useGenerateDataRows();
+  const [open, setOpen] = useState<boolean>(false);
 
-  const createWorker = () => {
-    setRows([...rows, { id: rows.length + 1, name: "Pracownik1" }]);
+  const openDialog = () => {
+    setOpen(true);
   };
 
   return (
-    <Button variant="contained" onClick={createWorker}>
-      Dodaj Pracownika
-    </Button>
+    <>
+      <Button variant="contained" onClick={openDialog}>
+        Dodaj Pracownika
+      </Button>
+      <FormDialog open={open} setOpen={setOpen} />
+    </>
   );
 };
 
